@@ -29,17 +29,46 @@
 
 // firstFunction(); // 2. This invocation pushes firstFunction onto the Call Stack
 
-// Visualizing the Execution Flow:StepCall Stack StateWhat is Happening?Start[ Global Context ]The script loads. globalVar, firstFunction, and secondFunction are allocated in memory.Line 18[ firstFunction FEC ][ Global Context ]firstFunction() is called. Its context is pushed to the top.Line 9[ secondFunction FEC ][ firstFunction FEC ][ Global Context ]Inside firstFunction, secondFunction() is called. A new context is pushed to the top.Line 15[ firstFunction FEC ][ Global Context ]secondFunction finishes. Its context is popped off and destroyed.Line 20[ Global Context ]firstFunction finishes. Its context is popped off. Only the Global context remains.
+// // Visualizing the Execution Flow:StepCall Stack StateWhat is Happening?Start[ Global Context ]The script loads. globalVar, firstFunction, and secondFunction are allocated in memory.Line 18[ firstFunction FEC ][ Global Context ]firstFunction() is called. Its context is pushed to the top.Line 9[ secondFunction FEC ][ firstFunction FEC ][ Global Context ]Inside firstFunction, secondFunction() is called. A new context is pushed to the top.Line 15[ firstFunction FEC ][ Global Context ]secondFunction finishes. Its context is popped off and destroyed.Line 20[ Global Context ]firstFunction finishes. Its context is popped off. Only the Global context remains.
 
 
 
-function thirdFunction() {
+// function thirdFunction() {
    
-    if(true){
-        var s=10;
-        console.log(s); // 10. This will log 10 to the console
-    }
-    console.log(s); // 11. This will also log 10 to the console because var is function-scoped
+//     if(true){
+//         var s=10;
+//         console.log(s); // 10. This will log 10 to the console
+//     }
+//     console.log(s); // 11. This will also log 10 to the console because var is function-scoped
+// }
+// console.log(s); // 12. This will throw a ReferenceError because s is not defined in the Global Execution Context
+// thirdFunction(); // 9. This invocation pushes thirdFunction onto the Call Stack
+console.log(s); // 12. This will log 20 to the console because s is defined in the Global Execution Context
+console.log(num);
+let num=20; // 13. This will throw a ReferenceError because num is in the temporal dead zone until it is initialized
+var s=20;
+sayHello(); // 14. This will throw a TypeError because sayHello is not defined yet;
+function sayHello() {
+    console.log("Hello!");
 }
-console.log(s); // 12. This will throw a ReferenceError because s is not defined in the Global Execution Context
-thirdFunction(); // 9. This invocation pushes thirdFunction onto the Call Stack
+
+// diffence  between let,const and var
+// 1. Scope:
+// - var: Function-scoped. It is accessible throughout the function in which it is declared.
+// - let: Block-scoped. It is only accessible within the block (e.g., if statement, loop) in which it is declared.
+// - const: Block-scoped. Similar to let, but it cannot be reassigned after its initial assignment.
+
+//2. Hoisting:
+// - var: Hoisted to the top of its scope and initialized with undefined. This means you can reference it before its declaration, but it will be undefined.
+// - let: Hoisted to the top of its block scope but not initialized. Accessing it before its declaration will result in a ReferenceError (temporal dead zone).
+// - const: Similar to let, hoisted but not initialized. Accessing it before its declaration will also result in a ReferenceError (temporal dead zone).
+
+// 3. Reassignment:
+// - var: Can be reassigned.
+// - let: Can be reassigned.
+// - const: Cannot be reassigned. However, if the const variable is an object or array, its properties or elements can still be modified.
+
+// 4. Redeclaration:
+// - var: Can be redeclared within the same scope without any error.
+// - let: Cannot be redeclared within the same scope. Attempting to do so will result in a SyntaxError.
+// - const: Cannot be redeclared within the same scope. Attempting to do so will also result in a SyntaxError.
