@@ -72,3 +72,9 @@ function sayHello() {
 // - var: Can be redeclared within the same scope without any error.
 // - let: Cannot be redeclared within the same scope. Attempting to do so will result in a SyntaxError.
 // - const: Cannot be redeclared within the same scope. Attempting to do so will also result in a SyntaxError.
+
+//5. Global Object Property:
+// - var: When declared in the global scope, it becomes a property of the global object (window in browsers).
+// - let: Does not create a property on the global object when declared in the global scope.
+// - const: Similar to let, does not create a property on the global object when declared in the global scope.
+
