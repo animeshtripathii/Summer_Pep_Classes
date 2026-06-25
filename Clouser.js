@@ -11,3 +11,29 @@ function outerFunction() {
 }
 const outer = outerFunction(); // Calling the outer function
 console.log(outer); // This will throw a ReferenceError because outerVariable is not accessible outside of outerFunction
+
+
+
+
+function createBankAccount(initialBalance) {
+    let balance = initialBalance; // This variable is private to the closure
+    return {
+        deposit: function(amount) {
+            balance += amount;
+            console.log(`Deposited: ${amount}. New Balance: ${balance}`);
+        },
+        withdraw: function(amount) {
+            if (amount <= balance) {
+                balance -= amount;
+                console.log(`Withdrew: ${amount}. New Balance: ${balance}`);
+            }
+        },
+        getBalance: function(){
+                return balance;
+            }
+        }
+    }
+const myAccount = createBankAccount(100); // Create a new bank account with an initial balance of 100
+myAccount.deposit(50);
+myAccount.withdraw(30);
+console.log(`Current Balance: ${myAccount.getBalance()}`); // Accessing the balance through the closure
