@@ -48,7 +48,7 @@ Promise.allSettled([promise]).then((results) => {
     console.log("All settled:", results);
 });
 
-// 8. Promise.any() - returns first fulfilled promise
+// 8. Promise.any() - returns first fulfilled promise7
 Promise.any([promise]).then((result) => {
     console.log("Any fulfilled:", result);
 }).catch(() => {

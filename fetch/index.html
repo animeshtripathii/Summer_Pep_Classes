@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fetch Dummy API</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="page">
+		<section class="hero">
+			<p class="eyebrow">Dummy API Fetch Demo</p>
+			<h1>Users fetched from JSONPlaceholder</h1>
+			<p class="subtitle">The data below is loaded with <span>fetch()</span> and rendered on the page.</p>
+		</section>
+
+		<section class="panel">
+			<div class="panel-header">
+				<h2>User Details</h2>
+				<button id="reloadBtn" type="button">Reload Data</button>
+			</div>
+			<div id="status" class="status">Loading users...</div>
+			<div id="userGrid" class="grid"></div>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
