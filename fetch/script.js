@@ -1,6 +1,5 @@
 const userGrid = document.getElementById("userGrid");
 const status = document.getElementById("status");
-const reloadBtn = document.getElementById("reloadBtn");
 
 const renderUsers = users => {
 	userGrid.innerHTML = users
@@ -27,7 +26,7 @@ const loadUsers = async () => {
 		if (!response.ok) {
 			throw new Error("Failed to fetch user data");
 		}
-
+       console.log(response);
 		const users = await response.json();
 		renderUsers(users);
 		status.textContent = `Loaded ${users.length} users from a dummy API.`;
@@ -36,5 +35,4 @@ const loadUsers = async () => {
 	}
 };
 
-reloadBtn.addEventListener("click", loadUsers);
 loadUsers();
