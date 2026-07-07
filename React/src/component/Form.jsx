@@ -8,11 +8,25 @@ function Form(){
     const [reg, setReg] = useState("");
     const [city, setCity] = useState("");
     const [option, setOption] = useState("");
-    const [submitted, setSubmitted] = useState(false);
+    const [submittedData, setSubmittedData] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setSubmitted(true);
+        const newEntry = {
+            name,
+            email,
+            reg,
+            city,
+            option,
+        };
+
+        setSubmittedData((prevData) => [...prevData, newEntry]);
+
+        setName("");
+        setEmail("");
+        setReg("");
+        setCity("");
+        setOption("");
     };
 
     return (
@@ -66,14 +80,20 @@ function Form(){
             <button type="submit">Submit</button>
         </form>
 
-        {submitted && (
-            <div>
-                <h2>Submitted Details</h2>
-                <p><strong>Name:</strong> {name}</p>
-                <p><strong>Email:</strong> {email}</p>
-                <p><strong>Registration:</strong> {reg}</p>
-                <p><strong>City:</strong> {city}</p>
-                <p><strong>Profession:</strong> {option}</p>
+        {submittedData.length > 0 && (
+         
+            <div style={{ marginTop: "20px", border: "1px solid #ccc", padding: "10px" ,display:"flex",flexDirection:"row",gap:"10px"}}>
+               <h2>Submitted Details</h2>
+                {submittedData.map((entry, index) => (
+                    <div key={index} style={{border: "1px solid #ccc", padding: "10px"}}>
+                        <p><strong>Entry {index + 1}</strong></p>
+                        <p><strong>Name:</strong> {entry.name}</p>
+                        <p><strong>Email:</strong> {entry.email}</p>
+                        <p><strong>Registration:</strong> {entry.reg}</p>
+                        <p><strong>City:</strong> {entry.city}</p>
+                        <p><strong>Profession:</strong> {entry.option}</p>
+                    </div>
+                ))}
             </div>
         )}
         </>
