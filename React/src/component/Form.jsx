@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../app.css";
 
 
@@ -8,7 +8,14 @@ function Form(){
     const [reg, setReg] = useState("");
     const [city, setCity] = useState("");
     const [option, setOption] = useState("");
-    const [submittedData, setSubmittedData] = useState([]);
+    const [submittedData, setSubmittedData] = useState(() => {
+        const savedData = localStorage.getItem("submittedData");
+        return savedData ? JSON.parse(savedData) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("submittedData", JSON.stringify(submittedData));
+    }, [submittedData]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -20,8 +27,7 @@ function Form(){
             option,
         };
 
-        setSubmittedData((prevData) => [...prevData, newEntry]);
-
+      setSubmittedData((prev)=>[...prev,newEntry]);
         setName("");
         setEmail("");
         setReg("");
@@ -81,12 +87,10 @@ function Form(){
         </form>
 
         {submittedData.length > 0 && (
-         
             <div style={{ marginTop: "20px", border: "1px solid #ccc", padding: "10px" ,display:"flex",flexDirection:"row",gap:"10px"}}>
                <h2>Submitted Details</h2>
-                {submittedData.map((entry, index) => (
-                    <div key={index} style={{border: "1px solid #ccc", padding: "10px"}}>
-                        <p><strong>Entry {index + 1}</strong></p>
+                {submittedData.map((entry) => (
+                    <div  style={{border: "1px solid #ccc", padding: "10px"}}>
                         <p><strong>Name:</strong> {entry.name}</p>
                         <p><strong>Email:</strong> {entry.email}</p>
                         <p><strong>Registration:</strong> {entry.reg}</p>

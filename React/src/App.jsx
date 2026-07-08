@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Form from './component/Form'
+import ClassComponent from './component/ClassComponent'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
     <button onClick={Decrement}>Decrement</button>
     <button onClick={() => setCount(0)}>Reset</button> */}
     <Form/>
+    <ClassComponent/>
     </>
   )
 }
