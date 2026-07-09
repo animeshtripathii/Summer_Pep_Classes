@@ -1,6 +1,6 @@
-import { useState, memo } from 'react';
+import React, { useState } from 'react';
 
-const Child = memo(function Child({ count }) {
+const Child = React.memo(function Child({ count }) {
 	console.log('Child rendered');
 
 	return <h2>Child Count: {count}</h2>;
@@ -21,16 +21,7 @@ export default function ReactMemoExample() {
 				Increase Count
 			</button>
 
-			<div style={{ marginTop: '16px' }}>
-				<input
-					type="text"
-					value={name}
-					onChange={(e) => setName(e.target.value)}
-					placeholder="Type here"
-				/>
-			</div>
-
-			<p>Name: {name}</p>
+			
 		</div>
 	);
 }

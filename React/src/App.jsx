@@ -1,10 +1,10 @@
 import './App.css'
-import ReactMemoExample from './component/React.Memo'
+import UseCallbackExample from './component/UseCallback'
 
 function App() {
   return (
     <>
-      <ReactMemoExample />
+      <UseCallbackExample />
     </>
   )
 }
