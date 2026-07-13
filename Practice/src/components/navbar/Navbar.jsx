@@ -12,7 +12,7 @@ function Navbar() {
 				<p className="navbar-tagline">Theme context and routing demo</p>
 			</div>
 
-			<nav className="navbar-links" aria-label="Primary">
+			<nav className="navbar-links">
 				<NavLink to="/" end>
 					Home
 				</NavLink>
@@ -20,11 +20,8 @@ function Navbar() {
 				<NavLink to="/dashboard">Dashboard</NavLink>
 				<NavLink to="/login">Sign In</NavLink>
 				<NavLink to="/signup">Sign Up</NavLink>
+                
 			</nav>
-
-			<button className="theme-toggle" type="button" onClick={toggleTheme}>
-				{isDark ? 'Light Mode' : 'Dark Mode'}
-			</button>
 		</header>
 	);
 }
