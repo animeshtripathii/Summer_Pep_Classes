@@ -1,0 +1,39 @@
+.page-card {
+	max-width: 960px;
+	margin: 32px auto;
+	padding: 32px;
+	border: 1px solid var(--border);
+	border-radius: 24px;
+	background: var(--surface);
+	box-shadow: var(--shadow);
+}
+
+.hero-card {
+	min-height: 320px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 12px;
+}
+
+.eyebrow {
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.18em;
+	font-size: 0.78rem;
+	font-weight: 800;
+	color: var(--accent);
+}
+
+.hero-card h2 {
+	margin: 0;
+	font-size: clamp(2rem, 4vw, 3.6rem);
+	line-height: 1.05;
+}
+
+.hero-card p {
+	margin: 0;
+	max-width: 60ch;
+	font-size: 1.05rem;
+	color: var(--muted);
+}

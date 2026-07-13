@@ -1,8 +1,12 @@
+import './Dashboard.css';
+
 function Dashboard() {
 	return (
-		<div style={{ minHeight: "100vh", display: "grid", placeItems: "center" }}>
-			<h2>Dashboard Page</h2>
-		</div>
+		<section className="page-card dashboard-card">
+			<p className="eyebrow">Dashboard</p>
+			<h2>Protected area</h2>
+			<p>This is a simple dashboard placeholder you can expand with real user data later.</p>
+		</section>
 	);
 }
 

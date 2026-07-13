@@ -19,6 +19,16 @@
 	gap: 10px;
 }
 
+.auth-label {
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.16em;
+	font-size: 0.74rem;
+	font-weight: 800;
+	color: #2563eb;
+	text-align: center;
+}
+
 .login-card h2 {
 	margin: 0 0 6px;
 	text-align: center;
