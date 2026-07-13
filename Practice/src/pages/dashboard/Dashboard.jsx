@@ -1,11 +1,21 @@
 import './Dashboard.css';
+import courses from '../../data/courses';
+import CourseCard from '../../components/course-card/CourseCard';
 
 function Dashboard() {
 	return (
-		<section className="page-card dashboard-card">
-			<p className="eyebrow">Dashboard</p>
-			<h2>Protected area</h2>
-			<p>This is a simple dashboard placeholder you can expand with real user data later.</p>
+		<section className="dashboard-shell">
+			<div className="dashboard-heading">
+				<p className="eyebrow">Dashboard</p>
+				<h2>Course Library</h2>
+				<p>Dummy course data is mapped into cards here to show course name and a short description.</p>
+			</div>
+
+			<div className="course-grid">
+				{courses.map((course) => (
+					<CourseCard key={course.id} course={course} />
+				))}
+			</div>
 		</section>
 	);
 }
