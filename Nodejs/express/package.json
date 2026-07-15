@@ -1,0 +1,14 @@
+{
+  "name": "express-basic-server",
+  "version": "1.0.0",
+  "description": "Simple Express server",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
