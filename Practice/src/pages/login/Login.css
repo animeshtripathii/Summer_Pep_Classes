@@ -34,6 +34,20 @@
 	text-align: center;
 }
 
+.form-message {
+	margin: 0;
+	padding: 10px 12px;
+	border-radius: 8px;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.form-message-error {
+	background: #fef2f2;
+	color: #b91c1c;
+	border: 1px solid #fecaca;
+}
+
 .login-card label {
 	font-size: 14px;
 	
@@ -70,4 +84,9 @@
 
 .login-card button:hover {
 	background: #1d4ed8;
+}
+
+.login-card button:disabled {
+	opacity: 0.75;
+	cursor: wait;
 }

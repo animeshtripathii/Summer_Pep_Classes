@@ -1,0 +1,18 @@
+[
+  {
+    "id": "a1cf0dfe-d345-4e3f-85fd-0f5281ebd263",
+    "firstName": "Test",
+    "lastName": "User",
+    "email": "test.user@example.com",
+    "password": "$2b$10$BB6lVUFpgoaiPWARgbB6g.TtpTf7jSIQiVJrUpFiXo6.KL3exE9im",
+    "createdAt": "2026-07-17T10:34:35.249Z"
+  },
+  {
+    "id": "1471b84f-9ee0-4dd0-a46c-b991c76f0293",
+    "firstName": "Cookie",
+    "lastName": "User",
+    "email": "cookie.user@example.com",
+    "password": "$2b$10$9Z6FbAPi546huIWWhjqAKO94kaOTUk3MWPZV4ELm5mQbdPqhtmz36",
+    "createdAt": "2026-07-17T10:38:23.654Z"
+  }
+]

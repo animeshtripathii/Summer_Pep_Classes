@@ -20,9 +20,9 @@ function Navbar() {
 				<NavLink to="/dashboard">Dashboard</NavLink>
 				<NavLink to="/login">Sign In</NavLink>
 				<NavLink to="/signup">Sign Up</NavLink>
-            <button className="theme-toggle" onClick={toggleTheme}>
-                  {isDark ? 'Light' : 'Dark'}
-                </button>
+				<button className="theme-toggle" onClick={toggleTheme}>
+					{isDark ? 'Light' : 'Dark'}
+				</button>
 			</nav>
 		</header>
 	);

@@ -1,16 +1,37 @@
-# React + Vite
+# Practice App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This workspace now contains a Vite React frontend and a small Express auth backend.
 
-Currently, two official plugins are available:
+## Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+From the `Practice` folder run:
 
-## React Compiler
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The frontend expects the auth API at `http://localhost:5000/api` by default. Override it with `VITE_API_URL` if needed.
 
-## Expanding the Oxlint configuration
+## Backend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+The backend lives in `backend/` and uses Express, bcrypt, JWT, and a file-backed user store.
+
+```bash
+cd backend
+npm install
+copy .env.example .env
+npm run dev
+```
+
+Set `JWT_SECRET` in `backend/.env` before logging in or registering users.
+
+## Routes
+
+The backend exposes:
+
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- `GET /api/auth/me`
+
+The `me` route is protected with a bearer token middleware.
