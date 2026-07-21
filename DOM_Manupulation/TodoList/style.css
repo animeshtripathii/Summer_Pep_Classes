@@ -1,0 +1,96 @@
+body {
+	font-family: Arial, sans-serif;
+	max-width: 640px;
+	margin: 40px auto;
+	padding: 28px;
+	background: linear-gradient(180deg, #f7f7fb 0%, #ffffff 100%);
+	border: 1px solid #e7e7ef;
+	border-radius: 16px;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+label,
+input,
+textarea,
+button {
+	display: block;
+	width: 100%;
+	margin-top: 12px;
+}
+
+input,
+textarea {
+	box-sizing: border-box;
+	padding: 10px;
+	border: 1px solid #cfcfd8;
+	border-radius: 10px;
+	outline: none;
+	font: inherit;
+	background: #fff;
+}
+
+button {
+	padding: 10px 14px;
+	cursor: pointer;
+	border: none;
+	border-radius: 10px;
+	background: #111827;
+	color: #fff;
+	font-weight: 600;
+	transition: transform 0.15s ease, opacity 0.15s ease;
+	margin-bottom: 6px;
+}
+
+.button:hover,
+button:hover {
+	opacity: 0.92;
+	transform: translateY(-1px);
+}
+
+.button:active,
+button:active {
+	transform: translateY(0);
+}
+
+.card {
+	margin-top: 24px;
+	display: grid;
+	gap: 12px;
+}
+
+.todo-item {
+	border: 1px solid #e2e2ea;
+	border-radius: 14px;
+	padding: 18px;
+	background: #fff;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	align-items: start;
+}
+
+.todo-item h3,
+.todo-item p {
+	margin: 0;
+}
+
+.todo-item p {
+	margin-top: 6px;
+}
+
+.todo-item.completed {
+	opacity: 0.72;
+}
+
+.todo-item.completed h3,
+.todo-item.completed p {
+	text-decoration: line-through;
+	text-decoration-thickness: 2px;
+}
+
+.complete-btn {
+	width: auto;
+	white-space: nowrap;
+	background: #2563eb;
+}
