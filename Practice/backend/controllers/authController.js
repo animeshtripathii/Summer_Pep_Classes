@@ -127,3 +127,7 @@ export function logout(req, res) {
 		message: 'Logged out successfully.',
 	});
 }
+
+export function getCourses(req,re){
+	 
+}

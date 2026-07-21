@@ -14,5 +14,21 @@
     "email": "cookie.user@example.com",
     "password": "$2b$10$9Z6FbAPi546huIWWhjqAKO94kaOTUk3MWPZV4ELm5mQbdPqhtmz36",
     "createdAt": "2026-07-17T10:38:23.654Z"
+  },
+  {
+    "id": "ebb396aa-17ae-4866-9bc0-db77b250256b",
+    "firstName": "Animesh",
+    "lastName": "Tripathi",
+    "email": "tripathianimesh38@gmail.com",
+    "password": "animesh",
+    "createdAt": "2026-07-18T10:32:15.661Z"
+  },
+  {
+    "id": 4,
+    "firstName": "Shri",
+    "lastName": "Tripathi",
+    "email": "tripathianimesh982@gmail.com",
+    "password": "Animesh@383",
+    "createdAt": "2026-07-18T10:41:54.251Z"
   }
 ]
