@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
-const userSchema = new Schema({
+const courseSchema = new Schema({
   title: {
     type: String,
     required: true,
@@ -26,4 +26,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-});
+},{timestamps:true});
+
+const Course=mongoose.model("Course",courseSchema);
+export default Course;
